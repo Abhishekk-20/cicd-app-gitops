@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cicd-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Abhishekk-20/cicd-app-gitops.git
+    targetRevision: main
+    path: charts/cicd-app
+    helm:
+      releaseName: cicd-app
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: cicd-app
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+

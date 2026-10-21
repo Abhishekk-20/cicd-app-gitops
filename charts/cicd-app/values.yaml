@@ -1,0 +1,21 @@
+replicaCount: 2
+
+image: 
+  repository: ghcr.io/abhishekk-20/cicd-app
+  tag: "d63e38fc1f2d9cbfa45a23635320edf053245659"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80 
+  targetPort: 5000
+  
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+
