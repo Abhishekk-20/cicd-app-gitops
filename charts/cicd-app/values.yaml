@@ -2,7 +2,7 @@ replicaCount: 2
 
 image: 
   repository: ghcr.io/abhishekk-20/cicd-app
-  tag: "1d49bc465ea76b71de0ea78637d62f799ca0d674"
+  tag: "34e29d1f18424f271c890cb890ab867e02c1b7c7"
   pullPolicy: IfNotPresent
 
 service:
